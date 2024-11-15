@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import DefaultLayout from '@/layout/DefaultLayout.vue';
 import HomePage from '@/views/HomePage.vue';
 import LoginPage from '@/views/LoginPage.vue';
+import AboutPage from '@/views/AboutPage.vue';
 
 const routes = [
   {
@@ -16,7 +17,13 @@ const routes = [
       {
         path: 'login',
         name: 'LoginPage',
-        component: LoginPage
+        component: LoginPage,
+        meta: { layout: null },
+      },
+      {
+        path: 'about',
+        name: 'AboutPage',
+        component: AboutPage,
       }
     ],
   },

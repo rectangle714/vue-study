@@ -1,7 +1,7 @@
 <template>
-  <div id="layout">
+  <div id="layout" >
     <HeaderLayout />
-    <div class="layout-content">
+    <div v-if="shouldUseLayout" class="layout-content">
       <SidebarLayout />
       <main>
         <router-view /> <!-- 페이지 콘텐츠가 여기에 표시됨 -->
@@ -23,23 +23,28 @@ export default {
     SidebarLayout,
     FooterLayout,
   },
+  computed: {
+    shouldUseLayout() {
+      return this.$route.meta.layout !== null;
+    }
+  },
 };
 </script>
 
 <style scoped>
-#layout {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
+  #layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
 
-.layout-content {
-  display: flex;
-  flex: 1;
-}
+  .layout-content {
+    display: flex;
+    flex: 1;
+  }
 
-main {
-  flex: 1;
-  padding: 20px;
-}
+  main {
+    flex: 1;
+    padding: 20px;
+  }
 </style>

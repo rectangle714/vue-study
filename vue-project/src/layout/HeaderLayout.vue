@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 .header {
-  background-color: #42b983;
+  background-color: #00AAE7;
   color: white;
   text-align: center;
   height: 60px;
