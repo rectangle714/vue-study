@@ -34,7 +34,6 @@
 <script>
 export default {
   name: 'LoginPage',
-  layout: null,
   data() {
     return {
       email: '',

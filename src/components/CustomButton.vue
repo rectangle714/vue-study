@@ -5,7 +5,7 @@
 <script>
 export default {
     name: 'CustomButton',
-    props: { 
+    props: {
         type: {
             type: String,
             default: ''

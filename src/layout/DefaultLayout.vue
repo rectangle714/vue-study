@@ -1,7 +1,7 @@
 <template>
   <div id="layout" >
     <HeaderLayout />
-    <div v-if="shouldUseLayout" class="layout-content">
+    <div class="layout-content">
       <SidebarLayout />
       <main>
         <router-view /> <!-- 페이지 콘텐츠가 여기에 표시됨 -->
@@ -22,12 +22,7 @@ export default {
     HeaderLayout,
     SidebarLayout,
     FooterLayout,
-  },
-  computed: {
-    shouldUseLayout() {
-      return this.$route.meta.layout !== null;
-    }
-  },
+  }
 };
 </script>
 
