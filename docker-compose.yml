@@ -1,4 +1,3 @@
-version: '3'
 services:
   vuejs-app:
     image: nginx:latest
@@ -12,17 +11,17 @@ services:
     
   gitlab:
     image: gitlab/gitlab-ce:latest
-    container_name: gitlab-container
+    container_name: gitlab
     hostname: gitlab.local
     ports:
-      - "8443:443"
-      - "8081:80"
-      - "2222:22"
+      - "443:443"
+      - "8081:8081"
+      - "8022:22"
     volumes:
       - ./gitlab/config:/etc/gitlab
       - ./gitlab/logs:/var/log/gitlab
       - ./gitlab/data:/var/opt/gitlab
     environment:
       GITLAB_OMNIBUS_CONFIG: |
+        gitlab_rails['gitlab_shell_ssh_port'] = 8022
         external_url 'http://localhost:8081'
-    restart: unless-stopped
