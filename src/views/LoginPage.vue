@@ -28,10 +28,15 @@
         <button type="submit" class="login-button">로그인</button>
       </form>
     </div>
+    <v-alert type="error">
+      ㅇㅇㅇ
+    </v-alert>
   </main>
 </template>
 
 <script>
+import { login } from '@/api/auth.js';
+
 export default {
   name: 'LoginPage',
   data() {
@@ -45,6 +50,7 @@ export default {
     handleLogin() {
       if(this.email == '') { this.errMsg = '이메일을 입력해주세요'; return; }
       if(this.password == '') { this.errMsg = '비밀번호를 입력해주세요.'; return; }
+      login(this.email, this.password);
     },
   },
 };

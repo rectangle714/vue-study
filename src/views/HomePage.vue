@@ -18,7 +18,7 @@
 
 <script>
 import CustomButton from '@/components/CustomButton.vue';
-import { getTest } from '@/api/test.js';
+import { login } from '@/api/auth.js';
 
 export default {
     name: 'HomePage',
@@ -27,7 +27,7 @@ export default {
     },
     methods: {
         clickHandler() {
-          getTest({email: 'test', password: '123'}, console.log('성공'), console.log('실패'));
+          login('test', '123');
         }
     },
     data() {

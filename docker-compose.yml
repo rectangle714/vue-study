@@ -14,7 +14,7 @@ services:
     container_name: gitlab
     hostname: gitlab.local
     ports:
-      - "443:443"
+      - "8443:443"
       - "8081:8081"
       - "8022:22"
     volumes:
